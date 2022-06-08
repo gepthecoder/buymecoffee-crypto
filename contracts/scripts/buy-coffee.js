@@ -29,7 +29,8 @@ async function printMemos(memos) {
 }
 
 async function main() {
-  // Get the example accounts we'll be working with.
+  // Get the example accounts.
+  const [owner, tipper, tipper2, tipper3] = await hre.ethers.getSigners();
 
   // We get the contract to deploy.
 
