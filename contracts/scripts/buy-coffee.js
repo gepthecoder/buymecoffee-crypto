@@ -63,7 +63,9 @@ async function main() {
   await printBalances(addresses);
 
   // Check out the memos.
-
+  console.log("== memos ==");
+  const memos = await buyMeACoffee.getMemos();
+  printMemos(memos);
 }
 
 main()
