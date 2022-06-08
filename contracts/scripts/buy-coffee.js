@@ -59,6 +59,8 @@ async function main() {
   await buyMeACoffee.connect(owner).withdrawTips();
 
   // Check balances after withdrawal.
+  console.log("== withdrawTips ==");
+  await printBalances(addresses);
 
   // Check out the memos.
 
