@@ -56,7 +56,8 @@ contract BuyMeACoffee {
     }
 
     // retrieve all the memos received and stored on the blockchain
-    function getMemos() public {
-
+    // view -> saves gas -> does not change state on the blockchain
+    function getMemos() public view returns(Memo[] memory) {
+        return memos;
     }
 }
