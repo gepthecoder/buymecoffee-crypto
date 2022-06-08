@@ -39,8 +39,11 @@ async function main() {
   // Deploy the contract.
   await buyMeACoffee.deployed();
   console.log("BuyMeACoffee deployed to:", buyMeACoffee.address);
-  
+
   // Check balances before the coffee purchase.
+  const addresses = [owner.address, tipper.address, buyMeACoffee.address];
+  console.log("==== start ====");
+  await printBalances(addresses);
 
   // Buy the owner a few coffees.
 
