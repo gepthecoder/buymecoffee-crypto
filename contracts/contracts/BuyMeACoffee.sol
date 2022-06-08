@@ -17,4 +17,38 @@ contract BuyMeACoffee {
         string name;
         string message;
     }
+
+    // List of all memos received from friends
+    Memo[] memos;
+
+    // address of the contract deployer
+    address payable owner;
+
+    // runs only when deployed
+    constructor() {
+        owner = payable(msg.sender);
+    }
+
+    // buy a coffee for contract owner
+    // _name -> coffee buyer
+    // _message -> msg from coffee buyer
+    // memory tells us we dont want the variable to keep around
+    // anyone can call this function - public
+    // make transactions - payable
+    function buyCoffee(string memory _name, string memory _message) public payable {
+        require(msg.value > 0, "Cannot buy coffee with 0 ETH");
+
+        // add the memo to storage
+        memos.push(Memo(
+            msg.sender,
+            block.timestamp,
+            _name,
+            _message
+        ));
+
+        // emit new log event when a memo is created
+        emit NewMemo(msg.sender, block.timestamp, _name, _message);
+
+
+    }
 }
