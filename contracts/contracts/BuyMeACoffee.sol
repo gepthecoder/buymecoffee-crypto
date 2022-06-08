@@ -48,7 +48,15 @@ contract BuyMeACoffee {
 
         // emit new log event when a memo is created
         emit NewMemo(msg.sender, block.timestamp, _name, _message);
+    }
 
+    // send the entire balance stored in this contract to the owner 
+    function withdrawTips() public {
+        require(owner.send(address(this).balance));
+    }
+
+    // retrieve all the memos received and stored on the blockchain
+    function getMemos() public {
 
     }
 }
