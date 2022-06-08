@@ -33,6 +33,8 @@ async function main() {
   const [owner, tipper, tipper2, tipper3] = await hre.ethers.getSigners();
 
   // We get the contract to deploy.
+  const BuyMeACoffee = await hre.ethers.getContractFactory("BuyMeACoffee");
+  const buyMeACoffee = await BuyMeACoffee.deploy();
 
   // Deploy the contract.
 
