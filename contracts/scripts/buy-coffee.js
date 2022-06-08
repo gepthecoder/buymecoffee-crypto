@@ -1,27 +1,52 @@
 
 const hre = require("hardhat");
 
+// Returns the Ether balance of a given address.
+// waffle uses ether under the hood | provider -> node (communication on the block)
 async function getBalance(address) {
   const balanceBigInt = await hre.waffle.provider.getBalance(address);
   return hre.ethers.utils.formatEther(balanceBigInt);
 }
 
-async function printBalance(addresses) {
+// logs the ether balances for a list of addresses 
+async function printBalances(addresses) {
   let idx = 0;
   for(const address of addresses) {
-    console.log(` Address ${idx} balance: `, await getBalance(address));
+    console.log(`Address ${idx} balance: `, await getBalance(address));
     idx++;
   }
 }
 
+// Logs the memos stored on-chain from coffee purchases.
+async function printMemos(memos) {
+  for (const memo of memos) {
+    const timestamp = memo.timestamp;
+    const tipper = memo.name;
+    const tipperAddress = memo.from;
+    const message = memo.message;
+    console.log(`At ${timestamp}, ${tipper} (${tipperAddress}) said: "${message}"`);
+  }
+}
+
 async function main() {
+  // Get the example accounts we'll be working with.
 
-  const Greeter = await hre.ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello, Hardhat!");
+  // We get the contract to deploy.
 
-  await greeter.deployed();
+  // Deploy the contract.
 
-  console.log("Greeter deployed to:", greeter.address);
+  // Check balances before the coffee purchase.
+
+  // Buy the owner a few coffees.
+
+  // Check balances after the coffee purchase.
+
+  // Withdraw.
+
+  // Check balances after withdrawal.
+
+  // Check out the memos.
+
 }
 
 main()
