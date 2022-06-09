@@ -155,7 +155,7 @@ function Contribution({ chain }) {
       <div className={styles.supportBlock}>
         <div className={styles.supportInfo}>
           <div className={styles.supportInfoData}>
-            <p>Hello 👋, I spend my time doing Javascript.</p>
+            <p>Hello 👋, I love to learn each day something new.</p>
           </div>
           <div>
             {support.length ? <h3>RECENT SUPPORTERS</h3> : null}
