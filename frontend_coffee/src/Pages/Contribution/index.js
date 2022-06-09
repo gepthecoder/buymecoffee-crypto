@@ -55,11 +55,9 @@ function Contribution({ chain }) {
         };
       })
       .sort((a, b) => b.block_number - a.block_number);
-    // console.log(result);
     setSupport(result.slice(0, sliceGap));
     setTotalSupport(result);
     setSupporters(Object.keys(_supporters).length);
-    // console.log(Query.data);
   }, [isWeb3Enabled, Query.data]);
 
   const handleNewNotification = (type) => {
