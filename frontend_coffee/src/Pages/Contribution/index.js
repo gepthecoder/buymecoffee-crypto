@@ -197,7 +197,7 @@ function Contribution({ chain }) {
             Buy <span>{fullName}</span> a coffee
           </h3>
           <div className={styles.input}>
-            <RiCupFill fill="#8247e5" size="2.5em" />{" "}
+            <RiCupFill fill="#4169e1" size="2.5em" />{" "}
             <span>
               <b>x</b>
             </span>
