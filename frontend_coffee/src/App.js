@@ -4,11 +4,12 @@ import { Routes, Route } from "react-router-dom";
 
 // COMPONENTS and HOOKS
 import useMetamask from "./Hooks/useMetamask.js";
-import ChainBanner from "./Component/ChainBanner/index";
 import Error404 from "./Pages/Error404/index";
 
+import ChainBanner from "./Component/ChainBanner/index";
 import Navbar from "./Component/Navbar/index";
 import Contribution from "./Pages/Contribution/index";
+import Footer from "./Component/Footer/Footer";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/" element={<Contribution chain={chainId} />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
+      <Footer />
     </>
   );
 }
