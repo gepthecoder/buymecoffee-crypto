@@ -33,11 +33,11 @@ function Contribution({ chain }) {
   const { fetch } = useWeb3ExecuteFunction();
   const dispatch = useNotification();
 
-  const Query = useMoralisQuery("BuyMeCoffee", (query) => query, [], {
+  const Query = useMoralisQuery("BuyMeACoffee", (query) => query, [], {
     autoFetch: true,
     live: true,
   });
-  useMoralisSubscription("BuyMeCoffee", (q) => q, [], {
+  useMoralisSubscription("BuyMeACoffee", (q) => q, [], {
     onUpdate: () => Query.fetch(),
     enabled: true,
   });
