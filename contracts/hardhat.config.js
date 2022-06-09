@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("@nomiclabs/hardhat-waffle");
+require("@nomiclabs/hardhat-etherscan"); // to verify
 
 
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
@@ -27,4 +28,7 @@ module.exports = {
       accounts: [process.env.PRIVATE_KEY],
     },
   },
+  etherscan: {
+    apiKey: process.env.API_KEY,
+  }
 };
