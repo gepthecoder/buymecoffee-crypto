@@ -1,0 +1,26 @@
+.Navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.75em 2em;
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 1;
+  
+    h3 {
+      margin: 0;
+  
+      a {
+        display: block;
+        text-decoration: none;
+        width: 20px !important;
+      }
+    }
+  
+    @media screen and (max-width: 768px) {
+      position: relative;
+      padding: 0.75em .3em;
+    }
+}
+  

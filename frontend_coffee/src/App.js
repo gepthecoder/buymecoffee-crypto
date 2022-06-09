@@ -5,6 +5,8 @@ import { useChain, useMoralis } from "react-moralis";
 import useMetamask from "./Hooks/useMetamask.js";
 import ChainBanner from "./Component/ChainBanner/index";
 
+import Navbar from "./Component/Navbar/index";
+
 
 function App() {
   const { enableWeb3, isWeb3Enabled, isAuthenticated, user } = useMoralis();
@@ -20,10 +22,11 @@ function App() {
       }
     }
   }, [isWeb3Enabled, isAuthenticated]);
-
+  
   return (
     <>
       <ChainBanner chain={chainId} />
+      <Navbar />
 
     </>
   );
